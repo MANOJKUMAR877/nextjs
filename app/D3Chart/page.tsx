@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { select } from "d3-selection";
 
-export default function page() {
+export default function MyPage() {
   const svgRef = useRef<SVGSVGElement | null>(null);
   useEffect(() => {
    // console.log(select(svgRef.current));
