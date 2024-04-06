@@ -1,4 +1,4 @@
 export default function Page() {
-    return <h1>Welcome page</h1>;
+    return <h1>Welcome Profiles</h1>;
   }
   
