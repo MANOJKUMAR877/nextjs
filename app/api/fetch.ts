@@ -1,11 +1,11 @@
 // pages/api/fetchDirectory.ts
 
-import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { NextApiRequest, NextApiResponse } from "next";
+import fs from "fs";
+import path from "path";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const appFolderPath = path.join(process.cwd(), 'app');
+  const appFolderPath = path.join(process.cwd(), "app");
 
   const directoryStructure = getDirectoryStructure(appFolderPath);
 
@@ -14,7 +14,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 interface FileItem {
   name: string;
-  type: 'folder' | 'file';
+  type: "folder" | "file";
   children?: FileItem[];
 }
 
@@ -28,13 +28,13 @@ function getDirectoryStructure(folderPath: string): FileItem[] {
     if (stats.isDirectory()) {
       return {
         name: item,
-        type: 'folder',
+        type: "folder",
         children: getDirectoryStructure(itemPath),
       };
     } else {
       return {
         name: item,
-        type: 'file',
+        type: "file",
       };
     }
   });
